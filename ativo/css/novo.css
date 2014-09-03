@@ -1,0 +1,54 @@
+body {
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+h1 {
+	text-align: center;
+}
+
+button {
+	color: white;
+	width: 500px;
+}
+
+thead td {
+	width: 100%;
+}
+
+div.novo {
+	text-align: right;
+}
+
+button#novo {
+	width: 40px;
+	margin: 0 0 15px 0;
+}
+
+.adicionado {
+	background-color: #a1cd8e!important;
+	border-color: #77bf8f!important;
+}
+
+.adicionado a {
+	color: green!important;
+}
+
+input.link {
+	display: inline;
+	border:none; 
+	background:transparent; 
+	outline: none;
+	width: auto;
+	height: auto;
+	text-align: center;
+	margin: 0;
+	padding: 0.5rem 0;
+	box-shadow: none;
+}
+
+.rodape img {
+	margin-top: 15px;
+}

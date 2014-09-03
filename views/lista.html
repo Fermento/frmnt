@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf8">
+		<title>Links encurtados</title>
+		
+		<link rel="stylesheet" href="../ativo/css/foundation.min.css">
+		<link rel="stylesheet" href="../ativo/css/normalize.css">		
+		<link rel="stylesheet" href="../ativo/css/novo.css">
+		<link rel="stylesheet" href="../ativo/css/tooltipster.css">
+	</head>
+	<body>
+		<h1><%=titulo%></h1>
+		<%if(link) {%>
+			<div data-alert class="alert-box info radius adicionado">
+				Link <a target="new" href="<%=link%>"><%=link%></a> adicionado como 
+					<input class="link radius" type="text" value="<%=curto%>" onClick="$(this).select();" />
+			</div>
+		<%} else if(erro) {%>
+			<div data-alert class="alert-box alert radius">
+				<%=erro%>
+			</div>
+		<%}%>
+		<div class="novo">
+		<button class="radius" id="novo" onclick="document.location = 'novo'">Novo</button>
+		</div>
+		<table class="radius">
+			<thead>
+				<tr>
+					<td>Link</td>
+					<td>Url</td>
+					<td>Clicks</td>
+				</tr>
+			</thead>
+			<tbody>
+			<%if(links) {
+				links.forEach(function(l){%>
+				<tr>
+					<td><a target="new" href="<%=l.url%>"><%=l.url%></a></td>
+					<td><a target="new" href="<%=prefixo+l.curto%>"><%=prefixo+l.curto%></a></td>
+					<td><%=l.clicks%></td>
+				</tr>
+			<%})
+			}%>				
+			</tbody>
+		</table>
+		<%%>
+		<script src="ativo/js/jquery.min.js"></script>
+		
+<script>
+// Include the UserVoice JavaScript SDK (only needed once on a page)
+UserVoice=window.UserVoice||[];(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/168DVPzeW5hY5faG2IPBw.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})();
+
+// Set colors
+UserVoice.push(['set', {
+  accent_color: '#FAAB18',
+  trigger_color: 'white',
+  trigger_background_color: 'rgba(46, 49, 51, 0.6)'
+}]);
+
+// Add default trigger to the bottom-right corner of the window:
+UserVoice.push(['addTrigger', { mode: 'contact', trigger_position: 'bottom-right' }]);
+
+// Autoprompt for Satisfaction and SmartVote (only displayed under certain conditions)
+UserVoice.push(['autoprompt', {}]);
+
+// Documento
+$(function() {
+	$('.link').attr('size', $('.link').val().length).click();
+});
+</script>
+	</body>
+</html>

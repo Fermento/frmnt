@@ -1,0 +1,25 @@
+{
+  "name": "url-shortener",
+  "version": "0.0.1",
+  "description": "Encurtador de Links da Fermen.to",
+  "main": "frmnt.js",
+  "repository": {
+    "type": "git",
+    "url": "."
+  },
+  "keywords": [
+    "url",
+    "shortener",
+    "fermento"
+  ],
+  "author": "Luiz Júnior <luiz@fermen.to>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "~3.5.1",
+    "ejs": "~1.0.0",
+    "then-redis": "^0.3.12",
+    "when": "^3.2.2"
+  }
+}
+
+        
